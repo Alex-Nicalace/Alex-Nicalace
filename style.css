@@ -1,0 +1,163 @@
+* {
+    /* Свойство box-sizing позволяет изменить этот алгоритм, чтобы свойства width и height задавали размеры не контента, а размеры блока */
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: verdana, arial, sans-serif;
+}
+
+body {
+    color: #fff;
+    font-size: 1.1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    background-color: #e29db0;
+    flex: 2 2 12em;
+    padding: 1em;
+}
+
+/*   свойство flex это совокупность свойств:
+  flex-grow: 0
+  flex-shrink: 1
+  flex-basis: auto */
+
+.nav
+/*, aside*/
+
+    {
+    /* flex: 1; */
+    background-color: #e29db0;
+    min-width: max-content;
+    padding:10px;
+    
+    /* padding-right: 5%; */
+}
+
+/* .nav li{min-width: max-content;} */
+
+nav {
+    order: -1;
+}
+
+/* header, */
+
+footer {
+    flex: 0 0 5em;
+    background-color: #ce79e1;
+}
+
+header ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header nav {
+    color: yellow;
+}
+
+header a {
+    color: yellow;
+}
+
+header li {
+    /* border: 1px solid green; */
+    margin-left: 30px;
+    width: fit-content;
+}
+
+header {
+    /*flex: 0 0 6em;*/
+    /*display: flex;  унаследовано от родительского блока
+    flex-direction: column;*/
+    /*     align-items: center; */
+    /*justify-content: center;*/
+    text-align: center;
+    background-color: #ec70e6;
+    /* - фоновый цвет (можно не задавать) по идее должен быть примерно такой же как цвет картинки */
+    /* margin-bottom: 10px;  */
+    /* - отступ снизу*/
+    background-image: url(img/header_flowers.jpg);
+    /* устанфка фонового изображения для шапки сайта */
+    /*height: 254px ; /* высота шапки, постафил такой же как у картинки */
+    background-position: center;
+    /* Позиционировать по центру */
+    background-repeat: no-repeat;
+    /* Не повторять картинку */
+    background-size: cover;
+    /* Растягивать картинку на весь контейнер */
+    /* line-height: normal; */
+    /* border: 1px solid green; */
+    /* flex-basis: min-content */
+    ;
+}
+
+.MainContent {
+    color: black;
+    background-image: url(img/background1.jpg);
+    text-align: justify;
+    text-indent: 20px;
+    /* Отступ первой строки в пикселах */
+    /* font-size: large; */
+}
+
+.MainContent h1{text-align: center;}
+
+@media screen and (min-width: 600px) {
+    body {
+        min-height: 100vh;
+    }
+    main {
+        flex-direction: row;
+        min-height: 100%;
+        flex: 1 1 auto;
+    }
+    header ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+/*     header li {
+        border: 1px solid green;
+    } */
+}
+
+time {
+    color: #6a2cce;
+  }
+
+  .Photo{
+    border-radius: 20%;
+    /* float:left; */ /* Выравнивание по левому краю благодаря этому появляется обтекание текстом справа*/
+    margin-right: 10px;
+}
+
+.CrashPhoto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+   /*  align-content: space-around; */
+    /* border: 1px solid green; */
+}
+
+.footer_tel{
+    padding-left: 30px;
+    /* padding-top: -20px;  */
+    background-image: url("img/icoTel.png"); /* поставил иконку телефона */
+    background-repeat: no-repeat;
+    
+}
