@@ -1,9 +1,10 @@
 * {
     /* Свойство box-sizing позволяет изменить этот алгоритм, чтобы свойства width и height задавали размеры не контента, а размеры блока */
-    box-sizing: border-box;
+
+box-sizing: border-box;
 }
 
-html, body {
+ html, body {
     padding: 0;
     margin: 0;
     font-family: verdana, arial, sans-serif;
@@ -20,6 +21,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    /* align-items: stretch; */
 }
 
 article {
@@ -30,19 +32,27 @@ article {
 
 /*   свойство flex это совокупность свойств:
   flex-grow: 0
-  flex-shrink: 1
-  flex-basis: auto */
+    CSS-свойство flex-grow определяет как много свободного пространства во flex-контейнере должно быть назначено текущему элементу (flex grow factor — «коэффициент увеличения flex»)
+    flex-shrink: 1
+  flex-shrink — свойство CSS, которое определяет фактор сжатия flex-элемента. Flex-элементы будут заполнять контейнер в зависимости от значения flex-shrink, когда стандартная ширина 
+    flex-элементов шире, чем flex-контейнер.
+  flex-basis: auto 
+    CSS свойство flex-basis задает базовый размер флекс элемента по основной оси. Это свойство определяет размер контент-бокса, если не задано иначе через box-sizing
+  */
 
 .nav
 /*, aside*/
 
     {
-    /* flex: 1; */
+    flex: 1;
     background-color: #e29db0;
-    min-width: max-content;
-    padding:10px;
-    
+    /* min-width: max-content; */
+    /* padding: 10px; */
     /* padding-right: 5%; */
+}
+
+article{
+    flex: 1;   
 }
 
 /* .nav li{min-width: max-content;} */
@@ -100,20 +110,25 @@ header {
     /* Растягивать картинку на весь контейнер */
     /* line-height: normal; */
     /* border: 1px solid green; */
-    /* flex-basis: min-content */
-    ;
+    /* flex-basis: min-content; */
 }
 
 .MainContent {
     color: black;
+    flex: 2 2 12em;
     background-image: url(img/background1.jpg);
     text-align: justify;
     text-indent: 20px;
     /* Отступ первой строки в пикселах */
     /* font-size: large; */
+/*     -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto; */
 }
 
-.MainContent h1{text-align: center;}
+.MainContent h1 {
+    text-align: center;
+}
 
 @media screen and (min-width: 600px) {
     body {
@@ -129,35 +144,42 @@ header {
         flex-direction: row;
         justify-content: center;
     }
-/*     header li {
+    header li {
         border: 1px solid green;
-    } */
+    }
 }
 
 time {
     color: #6a2cce;
-  }
+}
 
-  .Photo{
+.Photo {
     border-radius: 20%;
-    /* float:left; */ /* Выравнивание по левому краю благодаря этому появляется обтекание текстом справа*/
+    /* float:left; */
+    /* Выравнивание по левому краю благодаря этому появляется обтекание текстом справа*/
     margin-right: 10px;
 }
 
-.CrashPhoto{
+.CrashPhoto {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-between;
-   /*  align-content: space-around; */
+    
+    /*  align-content: space-around; */
     /* border: 1px solid green; */
 }
 
-.footer_tel{
+.CrashPhoto img{
+    height: 40%;
+     width: 40%; 
+}
+
+.footer_tel {
     padding-left: 30px;
     /* padding-top: -20px;  */
-    background-image: url("img/icoTel.png"); /* поставил иконку телефона */
+    background-image: url("img/icoTel.png");
+    /* поставил иконку телефона */
     background-repeat: no-repeat;
-    
 }
